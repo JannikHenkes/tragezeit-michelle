@@ -284,6 +284,46 @@ h3 {
   box-shadow: var(--shadow-soft);
 }
 
+/* Die Gruppenkurs-Karte läuft unter den drei Einzelangeboten über die gesamte Breite. */
+.group-course-card {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(180px, 0.35fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 32px;
+  padding: 32px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f0e9 100%);
+}
+
+.group-course-image {
+  min-height: 190px;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(216, 183, 160, 0.2);
+  border-radius: var(--radius-medium);
+}
+
+.group-course-image img {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  max-height: 230px;
+  object-fit: contain;
+}
+
+.group-course-content .eyebrow {
+  margin-bottom: 0.5rem;
+}
+
+.group-course-content p:not(.eyebrow) {
+  max-width: 760px;
+}
+
+.group-course-content .btn {
+  margin-top: 0.25rem;
+}
+
 .icon {
   width: 48px;
   height: 48px;
@@ -484,6 +524,16 @@ h3 {
   .cards {
     grid-template-columns: 1fr;
   }
+
+  .group-course-card {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .group-course-image {
+    min-height: 150px;
+  }
 }
 
 @media (max-width: 520px) {
@@ -504,4 +554,36 @@ h3 {
   .contact-form {
     padding: 24px;
   }
+}
+
+.location-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+
+  padding: clamp(0.875rem, 2vw, 1.25rem);
+
+  background: var(--color-soft);
+  border-left: none;
+  border-radius: var(--radius-medium);
+
+  color: var(--color-primary-dark);
+  font-weight: 600;
+}
+
+.location-note span {
+  color: var(--color-primary-dark);
+  min-width: 0;
+}
+
+.location-icon {
+  flex: 0 0 clamp(1.25rem, 2vw, 1.5rem);
+  width: clamp(1.25rem, 2vw, 1.5rem);
+  height: clamp(1.25rem, 2vw, 1.5rem);
+
+  margin-top: 0.2rem;
+  color: var(--color-primary);
 }
