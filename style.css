@@ -264,6 +264,11 @@ h3 {
   margin-bottom: 36px;
 }
 
+/* Der Einführungstext im Leistungsbereich nutzt die gesamte Containerbreite. */
+#leistungen .section-heading {
+  max-width: none;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -587,3 +592,97 @@ h3 {
   margin-top: 0.2rem;
   color: var(--color-primary);
 }
+
+/* Preisangaben innerhalb des Leistungsbereichs */
+.individual-pricing {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 24px 30px;
+  background: var(--color-soft);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+}
+
+.individual-pricing-heading {
+  min-width: 220px;
+}
+
+.individual-pricing-heading .eyebrow {
+  margin-bottom: 0.35rem;
+}
+
+.individual-pricing-heading p:last-child {
+  margin-bottom: 0;
+}
+
+.individual-pricing-values {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.individual-price-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.individual-price-item strong,
+.group-pricing-options strong {
+  color: var(--color-primary-dark);
+  font-size: 1.65rem;
+  line-height: 1.2;
+}
+
+.individual-price-item span,
+.group-pricing-options span {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.group-pricing {
+  margin: 20px 0 16px;
+  padding: 18px 20px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-medium);
+}
+
+.group-pricing .eyebrow {
+  margin-bottom: 0.75rem;
+}
+
+.group-pricing-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.group-pricing-options p {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 680px) {
+  .individual-pricing {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+    padding: 22px;
+  }
+
+  .individual-pricing-values {
+    flex-wrap: wrap;
+    gap: 22px 30px;
+  }
+
+  .group-pricing-options {
+    gap: 18px 26px;
+  }
+}
+
